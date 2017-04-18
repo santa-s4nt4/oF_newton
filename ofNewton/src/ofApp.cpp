@@ -2,16 +2,20 @@
 
 //--------------------------------------------------------------
 void ofApp::setup(){
+    ofSetFrameRate(60);
+    ofBackground(0);
 
 }
 
 //--------------------------------------------------------------
 void ofApp::update(){
+    particle.update();
 
 }
 
 //--------------------------------------------------------------
 void ofApp::draw(){
+    particle.draw();
 
 }
 
@@ -42,6 +46,9 @@ void ofApp::mousePressed(int x, int y, int button){
 
 //--------------------------------------------------------------
 void ofApp::mouseReleased(int x, int y, int button){
+    particle.position = ofVec2f(x,y); //初期位置
+    particle.velocity = ofVec2f(0,0); //速度をリセット
+    particle.acceleration = ofVec2f(ofRandom(-10, 10), ofRandom(-10, 10)); //加速度を設定
 
 }
 
