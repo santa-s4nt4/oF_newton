@@ -9,6 +9,7 @@ void ofApp::setup(){
 
 //--------------------------------------------------------------
 void ofApp::update(){
+    particle.addForce(0, 1.0); //下向きの力を加える(重力)
     particle.update();
 
 }
